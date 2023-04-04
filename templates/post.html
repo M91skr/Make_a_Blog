@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post über den Iran</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+{% for blog_post in post: %}
+{% if blog_post['id'] == post_id: %}
+<h1>{{ blog_post['title'] }}</h1>
+<p>{{ blog_post['body'] }}</p>
+<p>Quelle: <a href='https://de.wikipedia.org/wiki/Iran'>Wikipedia</a></p>
+{% endif %}
+{% endfor %}
+</body>
+</html>

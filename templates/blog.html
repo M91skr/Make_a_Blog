@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog über den Iran</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+<ol id="list" type="I">
+    {% for blog_post in posts: %}
+    <li>{{ blog_post['title'] }}<a href="{{ url_for('post', num=blog_post['id']) }}">Go to post</a></li>
+    {% endfor %}
+</ol>
+</body>
+</html>
