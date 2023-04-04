@@ -1,7 +1,9 @@
 ## Make a Blog
 
 ## Description
-In this code, a blog is designed using Flask.
+In this code, a blog about Iran is designed using Flask.
+The following site was used to convert json to Endpoint to create posts.
+https://www.npoint.io/
 
 
 ## How to run
