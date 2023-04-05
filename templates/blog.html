@@ -8,7 +8,8 @@
 <body>
 <ol id="list" type="I">
     {% for blog_post in posts: %}
-    <li>{{ blog_post['title'] }}<a href="{{ url_for('post', num=blog_post['id']) }}">Go to post</a></li>
+    <li>{{ blog_post['title'] }}</li>
+    <a href="{{ url_for('post', num=blog_post['id']) }}">zum Posten gehen</a>
     {% endfor %}
 </ol>
 </body>
