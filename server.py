@@ -7,6 +7,7 @@ In this code, a blog is designed using Flask.
 import requests
 from flask import Flask, render_template, request
 import smtplib
+import os
 
 # ---------------------------------------- Add Parameters ----------------------------------------
 
@@ -52,17 +53,17 @@ def login():
     print(name)
     print(email)
     print(question)
-    message = "Ihre Nachricht wurde erfolgreich gesendet,Ich antworte dir innerhalb der nächsten 3 Tage."
+    message = "Ihre Nachricht wurde erfolgreich gesendet, Ich antworte dir innerhalb der naechsten drei Tage."
     send_email(name, email, message)
     return "<h1>Ihre Nachricht wurde erfolgreich gesendet.</h1>"
 
 
-def send_email(name, email, phone, message):
+def send_email(name, email, message):
     email_message = f"Subject:New Message\n\nName: {name}\nEmail: {email}\nMessage:{message}"
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
-        connection.login(email_from, email_pass)
-        connection.sendmail(email_from, email, email_message)
+        connection.login(os.getenv(email_from), os.getenv(email_pass))
+        connection.sendmail(os.getenv(email_from), email, email_message)
 
 
 if __name__ == "__main__":
