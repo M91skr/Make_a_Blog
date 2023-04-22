@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Main Page</title>
-    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
 </head>
 <body>
-<h1>Hey</h1>
-<p id="home">Die Geschichte Irans umfasst die Entwicklungen auf dem Gebiet der Islamischen Republik Iran und
+<header>
+    <h1>Mein Blog über den Iran</h1>
+    <h3>Gesammelte Informationen über mein Land</h3>
+</header>
+<h2 class="home">Wunderschöner Iran</h2>
+<p class="home">Die Geschichte Irans umfasst die Entwicklungen auf dem Gebiet der Islamischen Republik Iran und
     historischer, oft
     unter dem Namen Persien bekannter iranischer Reiche von der Urgeschichte bis zur Gegenwart. Der Name Iran leitet
     sich aus dem altpersischen Būm-ī aryānam („Land der Arier“) ab (siehe iranische Sprachen, Eran (Begriff)).
@@ -19,7 +23,8 @@
     Nationalstaates Iran beginnt mit der Gründung des Safawidenreichs um 1501. Die persische Eigenbezeichnung
     Iran wurde am 21. März 1935 unter Reza Schah Pahlavi (Regent 1925–1941) für international verbindlich
     erklärt.</p>
-<a href="{{ url_for('get_blog') }}">zum Blog gehen</a><br>
+<a href="{{ url_for('get_blog') }}">zum Blog gehen</a>
 <a href="{{ url_for('contact') }}">Kontakt</a>
+<a href="{{ url_for('about') }}">Über</a>
 </body>
 </html>
