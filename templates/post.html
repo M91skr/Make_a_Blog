@@ -1,13 +1,34 @@
 <!DOCTYPE html>
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Post über den Iran</title>
-    <link href="static/css/style.css" rel="stylesheet">
+    <title>Make POst</title>
 </head>
-<body>
-<h1>{{ post['title'] }}</h1>
-<p>{{ post['body'] }}</p>
-<p>Quelle: <a href='https://de.wikipedia.org/wiki/Iran'>Wikipedia</a></p>
-</body>
-</html>
+<header class="masthead" style="background-image: url('{{post.img_url}}');height: 500px;background-position: center;background-repeat: no-repeat;background-size: contain"></header>
+  <div class="post-heading">
+      <h1 style="margin-left: 10%">{{post.title}}</h1>
+      <span class="meta" style="margin: 0% 10%">Posted by
+          <a href="#">{{post.author}}</a>
+          on {{post.date}}</span>
+  </div>
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto" style="margin: 20px 0px 0px 0px">
+            {{ post.body|safe }}
+            <p>Quelle: <a href='https://de.wikipedia.org/wiki/Iran'>Wikipedia</a></p>
+          <hr>
+           <div class="clearfix">
+          <a class="btn btn-success float-right" href="{{ url_for('edit_post', post_id=post['id']) }}}">Beitrag bearbeiten</a>
+          <a class="btn btn-danger float-right" href="{{ url_for('delete_post', post_id=post['id']) }}">Beitrag entfernen</a>
+        </div>
+          </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+{% endblock %}
