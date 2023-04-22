@@ -125,11 +125,6 @@ def contact():
     return render_template('contact.html')
 
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
-
-
 @app.route("/login", methods=["POST"])
 def message():
     name = request.form["cl_name"]
