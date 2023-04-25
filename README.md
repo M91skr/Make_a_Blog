@@ -15,5 +15,5 @@ run following:
 python -m venv env
 . env/bin/activate
 pip install -r requirements.txt
-python main.py
+python server.py
 ```
