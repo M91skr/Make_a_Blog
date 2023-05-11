@@ -1,10 +1,15 @@
+/*____________________________ Body ____________________________*/
+
 body{
+    margin-top: 0px;
     background-image: linear-gradient(#5D9C59, #DDF7E3, #DF2E38);
     font-family: "Brush Script MT", cursive;
     text-align: justify;
     font-size: 35px;
     line-height: 300%;
 }
+
+/*____________________________ Header ____________________________*/
 
 header{
     background-image: url("khaju_Bridge.jpg");
@@ -14,6 +19,7 @@ header{
     text-align: center;
 }
 
+/*____________________________ Home ____________________________*/
 
 .home {
     padding: 0% 25%;
@@ -23,6 +29,11 @@ header{
 p.home{
     font-size: 25px;
     line-height: 150%;
+}
+
+.post_header{
+    color: white;
+    text-align: center;
 }
 
 a:link, a:visited {
@@ -59,14 +70,38 @@ li {
     height: 500px;
 }
 
-.post_header{
-    color: white;
-    text-align: center;
+/*____________________________ Navbar ____________________________*/
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
-.btn{
-    padding: 5px;
-    margin-left: 25%;
-    text-align: center;
-    list-style-type: none;
+.navbar {
+  float: left;
+  padding: 0px;
+}
+
+.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 79px;
+  text-decoration: none;
+}
+
+.navbar a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+
+.flash_massage {
+  color: red;
 }

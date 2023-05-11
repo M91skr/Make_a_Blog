@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact</title>
+    <link href="static/css/style.css" rel="stylesheet">
 </head>
 <body>
+<ul>
+    <li class="navbar"><a href="{{ url_for('home') }}">Heim</a></li>
+    <li class="navbar"><a href="{{ url_for('register') }}">Registrieren</a></li>
+    <li class="navbar"><a href="{{ url_for('login') }}">Einloggen</a></li>
+    <li class="navbar"><a href="{{ url_for('logout') }}">Ausloggen</a></li>
+    <li class="navbar"><a href="{{ url_for('get_blog') }}">zum Blog gehen</a></li>
+</ul>
 <h1>Kontakt</h1>
 <p>Fragen Sie mich nach dem Iran</p>
 <form action="/message" method="post">

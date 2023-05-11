@@ -4,3 +4,6 @@ Flask_CKEditor==0.4.6
 flask_sqlalchemy==3.0.3
 Flask_WTF==1.1.1
 WTForms==3.0.1
+DateTime==5.1
+SQLAlchemy==2.0.10
+Werkzeug==2.2.3

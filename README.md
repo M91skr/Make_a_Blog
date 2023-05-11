@@ -6,6 +6,7 @@ In this code, a blog about Iran is designed using Flask.
 We can create new blog posts, edit posts and delete posts.
 Also, the user can send his question through the contact form and 
 receive an email containing the answer within a few days.
+Users can also post comments after logging in.
 
 ## How to run
 

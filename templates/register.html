@@ -1,26 +1,25 @@
+{% import "bootstrap/wtf.html" as wtf %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Blog über den Iran</title>
+    <title>Registrieren</title>
     <link href="static/css/style.css" rel="stylesheet">
 </head>
 <body>
 <ul>
     <li class="navbar"><a href="{{ url_for('home') }}">Heim</a></li>
-    <li class="navbar"><a href="{{ url_for('register') }}">Registrieren</a></li>
     <li class="navbar"><a href="{{ url_for('login') }}">Einloggen</a></li>
     <li class="navbar"><a href="{{ url_for('logout') }}">Ausloggen</a></li>
+    <li class="navbar"><a href="{{ url_for('get_blog') }}">zum Blog gehen</a></li>
     <li class="navbar"><a href="{{ url_for('contact') }}">Kontakt</a></li>
 </ul>
-<ol id="list" type="I">
-    {% for blog_post in posts: %}
-    <li>{{ blog_post['title'] }}</li>
-    <a href="{{ url_for('post', num=blog_post['id']) }}">zum Posten gehen</a>
-    {% endfor %}
-</ol>
-{% if current_user.id == 1: %}
-<a href="{{ url_for('new_post') }}">Neuen Beitrag erstellen</a>
-{% endif %}
+<h1>Registrieren</h1>
+{% for mesg in get_flashed_messages() %}
+<h4 class="flash_massage">{{ mesg }}</h4>
+{% endfor %}
+
+{{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+
 </body>
 </html>
